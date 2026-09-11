@@ -1,4 +1,9 @@
-# Synthetic data generator
+---
+title: Data generator
+tags: [data, testing]
+---
+
+# Data generator
 
 ```bash
 npm run generate:data -- --workers 8000 --arrivals 18 --out ./generated
@@ -50,6 +55,32 @@ Retraining success is generated from a different process — ramp-up time,
 literacy and digital comfort — so the two models genuinely learn different
 things rather than one being a relabelling of the other.
 
+## Scale
+
+Rows stream to disk, and worker attributes are derived from a per-index seed
+rather than held in an array. A million worker objects would be roughly half a
+gigabyte of heap; `workerAt(i)` reproduces any worker on demand from its index,
+so **memory stays flat regardless of row count**.
+
+One million outcome rows generate in about **3 seconds**.
+
+```mermaid
+flowchart LR
+    DB[("Seeded knowledge base")] --> G["Generator"]
+    G -->|"workerAt(i)<br/>deterministic per index"| W["workers.csv"]
+    G -->|"allocate by arrival capacity"| O["outcomes.csv"]
+    G --> R["roster.csv"]
+    G --> M["machinery.csv"]
+
+    W -.->|"never retained<br/>in memory"| G
+
+    style G fill:#e7f0fd,stroke:#1E40AF
+```
+
+`roster.csv` is 16 rows and `machinery.csv` a handful — a million rows there
+would mean a million distinct job titles. The two files that scale are
+`workers.csv` and `outcomes.csv`.
+
 ## A typical run
 
 ```
@@ -62,3 +93,8 @@ outcomes.csv   7598 rows across 18 past arrivals
 
 Import them in order — roster, workers, machinery, outcomes — then train from
 the Prediction model page.
+
+
+---
+
+Related: [[CSV import]] · [[Training pipeline]] · [[Machine catalogue]]

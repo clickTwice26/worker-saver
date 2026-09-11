@@ -1,3 +1,8 @@
+---
+title: CSV templates
+tags: [data, reference]
+---
+
 # CSV templates
 
 Four import formats. Headers are matched case-insensitively and ignore spaces,
@@ -34,3 +39,10 @@ worker kept a job, which is the result the product exists to produce.
 Record the feature columns **as they were at the arrival date**, not as they are
 today. Training on current values for a past decision leaks the future into the
 past and produces a model that validates well and predicts nothing.
+
+
+Ready-to-edit sample files: [`roster.csv`](../csv-templates/roster.csv) · [`machinery.csv`](../csv-templates/machinery.csv) · [`workers.csv`](../csv-templates/workers.csv) · [`outcomes.csv`](../csv-templates/outcomes.csv)
+
+---
+
+Related: [[CSV import]] · [[Recording outcomes]] · [[Data generator]]

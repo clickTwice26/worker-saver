@@ -97,6 +97,15 @@ A factory that knows its own line better than the reference data can still
 override the figure; the interface says which findings were derived and which
 were overridden.
 
+## Documentation
+
+Full documentation lives in [`docs/`](docs/README.md) as an Obsidian vault —
+35 linked notes with 24 Mermaid diagrams covering architecture, the engine, the
+ML pipeline, data import, deployment and the ethical constraints. Open the
+folder as a vault, or read it on GitHub.
+
+Start with [What is ALE Insight](docs/01-overview/What%20is%20ALE%20Insight.md).
+
 ## Structure
 
 ```
@@ -119,7 +128,7 @@ synonym index fixes it at the root. See `tests/roles.test.ts`.
 `findings.training_program_id` is `NOT NULL`, and the engine reports a coverage
 gap rather than emitting a bare score. The same output that says *train these 40
 first* would otherwise say *these 40 are most replaceable*, and this product does
-not produce that document. See [docs/ethics.md](docs/ethics.md).
+not produce that document. See [docs/09-ethics/Ethical constraints.md](docs/09-ethics/Ethical%20constraints.md).
 
 **Every number carries its provenance.** Risk rules, machine types and wage
 bands each carry a `source_ref` and a `confidence`, shown in the interface beside
@@ -160,13 +169,13 @@ binding constraint in every schedule, so replace them during onboarding.
 
 No authentication, cohorts assumed sequential.
 
-Full list in [docs/architecture.md](docs/architecture.md).
+Full list in [docs/02-architecture/System architecture.md](docs/02-architecture/System%20architecture.md).
 
 ## Getting your data in
 
 Create a factory, then import CSV exports from your own systems at `/app/import`.
 Templates and the full column reference are in
-[docs/csv-templates](docs/csv-templates/README.md).
+[docs/06-data/CSV templates.md](docs/06-data/CSV%20templates.md).
 
 | File | What it is |
 | --- | --- |
