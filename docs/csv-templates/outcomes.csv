@@ -1,0 +1,4 @@
+worker_ref,role,arrival_date,outcome,machine_type,tenure_months,operations_known,skill_grade,operation,trained_before_arrival
+HR-10041,Sewing Machine Operators,2025-03-01,retained,automated-sewing-unit,44,4,skilled,sew-set-sleeve,yes
+HR-10042,Sewing Machine Operators,2025-03-01,displaced,automated-sewing-unit,3,1,entry,sew-straight-seam,no
+HR-10043,Helpers & Line Feeders,2025-06-01,redeployed,overhead-bundle-transport,10,1,entry,move-bundles,yes

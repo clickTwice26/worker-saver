@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+.vite/
+
+# Local database — created by `npm run db:reset`
+packages/server/data/
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Generated test data. A million-row dataset is ~240MB; regenerate it with
+# `npm run generate:data` rather than committing it.
+generated/
+
+# Environment and local overrides
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Internal concept documents. The repository is public; these stay local.
+supporting documents/
+
+# OS
+.DS_Store

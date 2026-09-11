@@ -1,0 +1,4 @@
+machine_type,machine_name,arrival_date,units
+automated-sewing-unit,Automated sewing units phase 1,2027-05-01,12
+automatic-spreading-machine,Spreading line upgrade,2027-01-15,3
+automated-laser-cutter,Laser cutter,2027-09-01,2

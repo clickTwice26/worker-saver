@@ -1,0 +1,31 @@
+{
+  "name": "ale-insight",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Predictive workforce transition planning for ready-made garment factories",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "workspaces": [
+    "packages/shared",
+    "packages/server",
+    "packages/web"
+  ],
+  "scripts": {
+    "setup": "npm install && npm run db:reset",
+    "db:reset": "npm run -w @ale/server db:reset",
+    "db:migrate": "npm run -w @ale/server db:migrate",
+    "db:seed": "npm run -w @ale/server db:seed",
+    "dev": "node scripts/dev.mjs",
+    "dev:server": "npm run -w @ale/server dev",
+    "dev:web": "npm run -w @ale/web dev",
+    "build": "npm run -w @ale/web build",
+    "test": "npm run -w @ale/server test",
+    "typecheck": "tsc -b packages/shared packages/server packages/web",
+    "generate:data": "node scripts/generate-data.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,4 @@
+worker_ref,role,tenure_months,operations_known,skill_grade,operation,line,shift
+HR-10041,Sewing Machine Operators,48,4,skilled,sew-set-sleeve,L4,A
+HR-10042,Sewing Machine Operators,7,1,entry,sew-straight-seam,L4,A
+HR-10043,Helpers & Line Feeders,14,1,entry,move-bundles,L4,B
